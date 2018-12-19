@@ -15,13 +15,16 @@
 export default {
   asyncData({ $axios }) {
     $axios.setToken(
-      `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQtaWQiOiIzMGViYzVkNjZkNDE0ZTEzYjM1ZDNiYTQ5YTY4YzhkMyIsInNlc3Npb24taWQiOiJkYTg5NTJlMy02ZGIwLTRkOGYtOTZiYS04NDVkMWM4OTBiMTMiLCJuYmYiOjE1NDUyMTEwOTYsImV4cCI6MTU0NjQyMDY5NiwiaWF0IjoxNTQ1MjExMDk2LCJpc3MiOiJNaWRkbGV3YXJlIiwiYXVkIjoiTWlkZGxld2FyZSJ9.6u6azMXGJvh9wfsX3kXkN37AK-s1pJp79GTRqTHnY8o`,
+      `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQtaWQiOiI1NTg2ZDVjYTc5YWU0MjQ1OTBmOTgwNTExNDEyMzAzMiIsInNlc3Npb24taWQiOiIxMzlmNTAyYy1iZjA4LTQzMGUtYjEyYi02ZjY0ZDNhMmM4MDIiLCJuYmYiOjE1NDUxMjM0OTAsImV4cCI6MTU0NjMzMzA5MCwiaWF0IjoxNTQ1MTIzNDkwLCJpc3MiOiJNaWRkbGV3YXJlIiwiYXVkIjoiTWlkZGxld2FyZSJ9.YCY27B3-Oxu3L5EP0pjP9os02NKwDmz4FUAEQyfpa88`,
       'Bearer'
     )
     return $axios
-      .get('https://api.kintohub.com/helloworld/hello/world')
+      .get(
+        'https://api.kintohub.com/sportfitservice/places?sw=114.13217668473249%2C22.269075035782254&ne=114.20856331526761%2C22.33879626352389&sports=134&anybuddyorigin=114.1751471%2C22.276022&limit=99'
+      )
       .then(res => {
-        return { message: res.data.message }
+        console.log(res)
+        return { message: res.data.data.type }
       })
       .catch(err => {
         console.log('Request errored:', err)
