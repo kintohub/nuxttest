@@ -26,7 +26,7 @@ export default {
       }
     )
     return $axios
-      .get('https://sportplaces-api-staging.herokuapp.com/api/v1/sportsz')
+      .get('https://sportplaces-api-staging.herokuapp.com/api/v1/sports')
       .then(res => {
         return { message: 'yay' }
       })
