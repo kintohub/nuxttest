@@ -14,17 +14,6 @@
 <script>
 export default {
   asyncData({ $axios }) {
-    $axios.interceptors.request.use(
-      request => {
-        // console.logl'what', response)
-        console.log('WHAT ', request.headers)
-        return request
-      },
-      error => {
-        console.log('AXIOS', error.response.request)
-        return Promise.reject(error)
-      }
-    )
     return $axios
       .get('https://sportplaces-api-staging.herokuapp.com/api/v1/sports')
       .then(res => {
