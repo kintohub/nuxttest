@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <h1 class="title">
-        Test Ajax
+        Github Ajax
       </h1>
       <h2 class="subtitle">
         Ajax Response: {{ message }}
@@ -26,9 +26,11 @@ export default {
       }
     )
     return $axios
-      .get('https://sportplaces-api-staging.herokuapp.com/api/v1/sports')
+      .get(
+        'https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc'
+      )
       .then(res => {
-        return { message: 'yay' }
+        return { message: res.data.total_count }
       })
   }
 }

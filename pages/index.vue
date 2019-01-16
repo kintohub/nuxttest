@@ -10,6 +10,7 @@
       </h2>
       <div class="links">
         <nuxt-link to="/test">Test Page</nuxt-link>
+        <nuxt-link to="/github">Github Page</nuxt-link>
       </div>
     </div>
   </section>
